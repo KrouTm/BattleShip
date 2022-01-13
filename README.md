@@ -1,56 +1,57 @@
 # BattleShip
 
 BOARD
-
-- A primeira coisa que comecei a fazer foi o board.
-
-- Repare que quado o usuario escreve o nome, aparece logo acima do board dizendo o proprio nome do usuario ao inves de "Your board" por exemplo", isso deixa o jogo mais convidativo para o usuario.
-
-- No comeco o board estava escrito de forma extenca, muito loga, como "V1=[' ~',' ~',' ~',' ~',' ~',' ~',' ~',' ~',' ~',' ~',' ~',' ~']", isso estava escrito 12 vezes e o codigo nao funcionava como deveria se eu colocasse por exemplo "V1=[' ~'*12]" ou "V1[' ~',' ~',' ~',' ~',' ~',' ~',' ~',' ~',' ~',' ~',' ~',' ~']*12", pois a linguagem interpreta isso como sendo o mesmo elemeto, o '~' deveria ser considerado como um elemento individual, mas apos algumas pesquisas eu pude mudalo para:
+ 
+- The first thing I started doing was the board.
+ 
+- Notice that when the user writes the name, it appears just above the board saying the user's own name instead of "Your board" for example", this makes the game more inviting for the user.
+ 
+- In the beginning the board was written in an extensive form, very long, as "V1=[' ~',' ~',' ~',' ~',' ~',' ~',' ~',' ~' ,' ~',' ~',' ~',' ~']", this was written 12 times and the code did not work as it should if I put for example "V1=[' ~'*12]*12" or "V1 [' ~',' ~',' ~',' ~',' ~',' ~',' ~',' ~',' ~',' ~',' ~',' ~']* 12", because the language interprets this as being the same element, the '~' should be considered as an individual element, but after some trial and error I was able to change it to:
 "V1=[]
 for i in range(12):
-    V1.append([' ~']*12)"
-    
-- e caso nao tenha ficado muito claro, os espacos no comeco do '~' sao apenas para dar uma aparencia melhor e poder colorir o fundo de um dos ' ~' pra vermelho substituindo por ' X' quando ambos os jogadores jogarem a bomba e conseguirem acertar uma parte do ship.
-
+	V1.append([' ~']*12)"
+   
+- and in case it wasn't very clear, the spaces at the beginning of the '~' are just to give it a better appearance and to be able to color the background of one of the ' ~' to red replacing it with 'X' when both players throw the bomb and manage to hit a part of the ship.
+ 
 GETTING THE USERS COORDINATES
-
-- Foi colocado instrucoes para o usuario poder inserir as cordenatas onde deseja inserir o ship.
-
-- Here "letter=input('\0330;35;48m☻ Choose a row (A-L): \033m').capitalize()" and here "letter2=input('\0330;35;48m☻ Another row: \033m').capitalize()", foi nescessario transformar a letra no qual o usuario digitou em numero. Por isso foi preciso capitalizar a letra do input para poder comparar as letras de "H=['A','B','C','D','E','F','G','H','I','J','K','L']") e "transformar em numero" com for loop.
-
-- Ha falhas como: o usuario nao pode errar as cordenadas, o codigo nao detecta o erro e nao oferece chance de tentar denovo, caso o usuario escreva todos as cordenadas de forma correta nos primeiros quatro ships e no quinto ship o usuario errar, tera que clicar run denovo e inserir os dados novamente. Teria que haver codigos para detectar quando o usuario coloca um '■' (no caso um pedaco do barco) em cima de outro '■', caso o usuario erre a linha ou coluna onde iria colocar o resto do barco, quando o usuario escreve uma letra ou numero ou qualquer tipo de outro caracter que nao existe nas opcoes do board...
-
-- Alem dos bugs nao fica claro o suficiente como exatamente o usuario deveria colocar os barcos, o usuario deve entender que o Carrier sao seis '■' consecutivamente sem separar um '■' do outro '■', como '■ ■ ■ ■ ■ ■', deve aparentar assim no board, mas nao consegui pensar em uma maneira melhor de expressar isso sem usar outra plataforma, apenas usando python puro.
-
+ 
+- Instructions were placed for the user to be able to insert the coordinates where he wants to insert the ship.
+ 
+- Here "letter=input('\0330;35;48m☻ Choose a row (AL): \033m').capitalize()" and here "letter2=input('\0330;35;48m☻ Another row: \ 033m').capitalize()", it was necessary to transform the letter in which the user typed into a number. That's why it was necessary to capitalize the input letter to be able to compare the letters of "H=['A','B','C','D','E','F','G','H' ,'I','J','K','L']") and "turn into number" with for loop.
+ 
+- There are flaws such as: the user can input wrong coordinates, the code does not detect the error and does not offer a chance to try again, if the user inputs all the coordinates correctly in the first four ships and in the fifth ship the user makes a mistake, he will have to restart the game and enter the data again. There would have to be codes to detect when the user places an '■' (in this case a piece of the boat) on top of another '■', in case the user misses the row or column where he would put the rest of the boat, when the user writes a letter or number or any other type of character that does not exist in the board options, etc.
+ 
+- Besides the bugs it is not clear enough how exactly the user should place the boats, the user must understand that the Carrier is six '■' consecutively without separating one '■' from the other '■', like '■ ■ ■ ■ ■ ■', it should look like this on the board, but I couldn't think of a better way to express this without using another platform, just using pure python.
+ 
 GETTING THE PC COORDINATES
-
-- Foi usado a propriedade randint de random para escolher um numero aleatoriamente. a variavel "hv=randint(0,1)" significa que ele ira aleatoriamente escolher 0 ou 1 com a intencao de definir se o barco sera desenhado horizontalmente ou verticalmente:
-■     or    ■ ■ ■ ■ ■ ■
+ 
+- Randint property of random was used to choose a random number. The variable "hv=randint(0,1)" means that it will randomly choose 0 or 1 with the intention of defining whether the boat will be drawn horizontally or vertically:
+■ or ■ ■ ■ ■ ■ ■
 ■
 ■
 ■
 ■
 ■
+ 
+- "pcrow=randint(0,11)" and "pccolumn=randint(0,11)" is also randomly choosing a number from 0 to 11 because there are 12 rows and 12 columns (columns represented by the variable "H=['A ','B','C','D','E','F','G','H','I','J','K','L']").
+ 
+- Just below in the for loop I'm replacing the '~' that represents the water by '■' that represents the ship. However, before being printed, the program can detect if the ship exceeds the board and a part of the ship will not be printed within the area of the board. If this happens, it will print it in the opposite direction, that is, negatively. This was one of the initial problems of this part, it took a lot of effort to find a way for the ship not to be printed before knowing if it would fit, before that was solved the program would print the part of the ship that fit on the board and not print the rest.
+ 
+- There is also a problem where the program does not detect if the ships will collide (one ship or more being printed in the same place) this also happens with getcoordinatesUser. I tried several ways to correct this, because it is a problem that also affects the number of '■' inside the board and with that, if there is not the exact number of '■', it will not be possible to fairly declare a winner or loser.
+ 
+- The program does not have artificial intelligence in case it hits an '■' and keeps trying in the same area until it finishes destroying the entire ship for example. It may happen that the program may reach the same place where it had already reached before. So issu makes him a practically irrelevant opponent hahaha, being almost impossible for him to beat the user.
+ 
+- I could try to fix this but it would take a lot of time and my deadline is only one month, as just a beginner this is difficult.
+ 
+WHEN THE USER WILL THROW THE BOMB
 
-- "pcrow=randint(0,11)" e "pccolumn=randint(0,11)" esta tambem aleatoriamente escolhendo um numero de 0 a 11 pois sao 12 linhas e 12 colunas (colunas representadas pela variavel "H=['A','B','C','D','E','F','G','H','I','J','K','L']").
+- The idea is very similar to when the user chooses where to place the '■', there was no fanfare with that. Add some comments so the player can think about fun instead of thinking I can have more time to comment more on what the computer can randomly pick one of them.
+- 
+WHEN THE PC WILL THROW THE BOMB
 
-- Logo abaixo no for loop estou substituindo o '~' que representa a agua por '■' que representa o ship. Porem caso antes de ser imprimido o programa consegue detectar caso o ship ultrapasse o board e uma parte do ship nao sera imprimido dentro da area do board. Caso isso venha a ocorrer ele ira imprimilo na direcao contraria ou seja negativamente. Este era um dos problemas iniciais desta parte, foi preciso bastante esforco para se achar uma maneira para que o ship nao fosse imprimido antes de saber se iria caber, antes disso ser resolvido o programa imprimia a parte do ship que cabia no board e escolhia outra coordenada e continuava a imprimir o resto do ship.
-
-- Ha tambem o problema de que o programa nao detecta se os ships terao colisao (um ship ou mais serem imprimidos no mesmo lugar) isso tambem acontece com getcoordinatesUser. Tentei varias formas de corrigir isso, pois eh um problema que tambem afeta no numero de '■' dentro do board e com isso, se nao houver o numero exato de '■', nao sera possivel declarar um vencedor ou perdedor de acordo com a forma no qual eu decidi escrever meu codigo para decidir isso.
-
-- O programa nao tem inteligencia artificial para caso ele acerte um '■' e continuar tentando na msm area ate terminar de destruir o ship inteiro por exemplo. Pode acontecer de o programa possa atingir o mesmo lugar no qual tivesse ja atingido antes. Entau issu o torna um oponente praticamente irrelevante hahaha, sendo quase impossivel que ele ganhe do usuario.
-
-- Eu poderia tentar corrigir isso mas levaria muito tempo e meu prazo eh apenas de um mes, como apenas iniciante isso eh dificil.
-
-WHEN USER ARE GOING TO DROP THE BOMB
-
-- A ideia eh parecida com a de quando o usuario escolhe onde colocar o '■', nao houve muito alarde com isso. Adcionei uns comentarios para dar mais diversao ao jogador mas caso eu tivesse mais tempo poderia pensar em mais opcoes de comentarios para que o computador pudesse aleatoriamente escolher uma delas.
-
-WHEN PC ARE GOING TO DROP THE BOMB
-
-- Tambem sendo uma ideia mais simples de quando o PC escolhe um lugar no board aletorimente onde colocar os barcos, essa funcao escolhe um lugar aleatoriamente onde colocar o "X"  com fundo vermelho indicando que o barco foi atingido.
+- Also being a simple idea when the PC randomly chooses a redder place on the board to place the bars, this function randomly chooses a place to place the "X" with background indicating that the boat has been hit.
 
 WHILE LOOP
 
-- O while loop foi criado para que ele imprima e execute as funcoes acima ate o jogo finalizar com um vencedor e perdedor interropendo o loop. A maio dificuldade nesta parte foi encontrar uma maneira de contagem de '■', pois quem obter 20*'■' primeiro seria o vencedor. Tudo issu foi resolvido com a funcao variavel.find(), mas como mencionei acima, essa funcao nao funcionara caso o usuario ou o PC tenha tido colisao de ships.
+- The while loop is designed so that it prints and executes the above functions when it ends with a winner and loser breaking the loop. The biggest difficulty in this part was finding a way to count '■', because whoever gets 20*'■' first wins. Everything was solved with the variable.find() function.
+
