@@ -1,5 +1,5 @@
+from random import randint
 import time
-
 print("\033[0;33;48m╦ ╦┌─┐┬  ┬  ┌─┐┌─┐┌┬┐┌─┐  ┌┬┐┌─┐\
 \n║║║├┤ │  │  │  │ ││││├┤    │ │ │\
 \n╚╩╝└─┘┴─┘┴─┘└─┘└─┘┴ ┴└─┘   ┴ └─┘\033[m")
@@ -29,7 +29,6 @@ ship='\033[0;37;44m'+' ■'
 pcship=' ■'
 shiphit='\033[0;30;41m X'
 waterhit='\033[0;37;46m ~'
-from random import randint
 
 def drawboard(board,color,name):#Making the style of the board
     z=0
@@ -74,7 +73,7 @@ def getcoordinatesUser():
                 V1[x][number]=ship#Replacing the '~' with '■'
         drawboard(V1,usercolor,username)
         a=a+1
-#getcoordinatesUser()
+getcoordinatesUser()
 
 def getcoordinatesPC():
     k=6
