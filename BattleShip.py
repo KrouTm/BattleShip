@@ -113,7 +113,6 @@ def Userdropbomb():
         drawboard(V2,pccolor,pcname)
         print("Not this time, keep trying! ᕦ(ò_óˇ)ᕤ")
 
-
 def PCdropbomb():
     #Generating a random number in the coordinates of the board
     hh=randint(0,11)
