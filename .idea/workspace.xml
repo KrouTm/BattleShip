@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67870da0-9eca-4897-aad6-0a9149301434" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BattleShip.py" beforeDir="false" afterPath="$PROJECT_DIR$/BattleShip.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -29,6 +28,7 @@
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RunManager">
     <configuration name="BattleShip" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -67,7 +67,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1641990519341</updated>
-      <workItem from="1641990521278" duration="6154000" />
+      <workItem from="1641990521278" duration="7722000" />
     </task>
     <servers />
   </component>
@@ -75,6 +75,6 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/BattleShip$BattleShip.coverage" NAME="BattleShip Coverage Results" MODIFIED="1641992716672" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BattleShip$BattleShip.coverage" NAME="BattleShip Coverage Results" MODIFIED="1642076654975" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

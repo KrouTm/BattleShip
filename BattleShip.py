@@ -1,3 +1,5 @@
+import time
+
 print("\033[0;33;48m╦ ╦┌─┐┬  ┬  ┌─┐┌─┐┌┬┐┌─┐  ┌┬┐┌─┐\
 \n║║║├┤ │  │  │  │ ││││├┤    │ │ │\
 \n╚╩╝└─┘┴─┘┴─┘└─┘└─┘┴ ┴└─┘   ┴ └─┘\033[m")
@@ -16,14 +18,17 @@ for i in range(12):
     V1.append([' ~']*12)
 V2=[]
 for i in range(12):
-    V2.append([' ?']*12)
+    V2.append([' *']*12)
+V3=[]
+for i in range(12):
+    V3.append([' ?']*12)
 ships=['Carrier (6)','Battleship (5)','Destroyer (4)','Submarine (3)','Patrol Boat (2)']
 usercolor='\033[0;30;44m'
 pccolor='\033[0;30;43m'
 ship='\033[0;37;44m'+' ■'
 pcship=' ■'
 shiphit='\033[0;30;41m X'
-waterhit='\033[0;30;46m ~'
+waterhit='\033[0;37;46m ~'
 from random import randint
 
 def drawboard(board,color,name):#Making the style of the board
@@ -69,7 +74,7 @@ def getcoordinatesUser():
                 V1[x][number]=ship#Replacing the '~' with '■'
         drawboard(V1,usercolor,username)
         a=a+1
-getcoordinatesUser()
+#getcoordinatesUser()
 
 def getcoordinatesPC():
     k=6
@@ -93,7 +98,7 @@ def getcoordinatesPC():
 getcoordinatesPC()
 
 def Userdropbomb():
-    drawboard(V2,pccolor,pcname)
+    drawboard(V3,pccolor,pcname)
     print()
     #Figuring out where the user wants to put the ships
     print("Enter the coordinates to drop the bomb 💣")
@@ -106,11 +111,13 @@ def Userdropbomb():
         userow=userow+1
     if V2[userow][usernumber]==pcship:#To update board appearance to ship hit
         V2[userow][usernumber]=shiphit
-        drawboard(V2,pccolor,pcname)
+        V3[userow][usernumber]=shiphit
+        drawboard(V3,pccolor,pcname)
         print("Good job patrol! You hit the ship 💪 (•︡益︠•) 👊")
     else:#To update board appearance to water hit
         V2[userow][usernumber]=waterhit
-        drawboard(V2,pccolor,pcname)
+        V3[userow][usernumber]=waterhit
+        drawboard(V3,pccolor,pcname)
         print("Not this time, keep trying! ᕦ(ò_óˇ)ᕤ")
 
 def PCdropbomb():
@@ -129,7 +136,9 @@ def PCdropbomb():
 game=True
 while game:
     Userdropbomb()
+    time.sleep(2)
     PCdropbomb()
+    time.sleep(2)
     cont=0
     cont2=0
     for l in V2:
