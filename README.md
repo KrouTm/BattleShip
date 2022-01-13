@@ -17,7 +17,7 @@ GETTING THE USERS COORDINATES
 
 - Foi colocado instrucoes para o usuario poder inserir as cordenatas onde deseja inserir o ship.
 
-- Here "letter=input('\033[0;35;48m☻ Choose a row (A-L): \033[m').capitalize()" and here "letter2=input('\033[0;35;48m☻ Another row: \033[m').capitalize()", foi nescessario transformar a letra no qual o usuario digitou em numero. Por isso foi preciso capitalizar a letra do input para poder comparar as letras de "H=['A','B','C','D','E','F','G','H','I','J','K','L']") e "transformar em numero" com for loop.
+- Here "letter=input('\0330;35;48m☻ Choose a row (A-L): \033m').capitalize()" and here "letter2=input('\0330;35;48m☻ Another row: \033m').capitalize()", foi nescessario transformar a letra no qual o usuario digitou em numero. Por isso foi preciso capitalizar a letra do input para poder comparar as letras de "H=['A','B','C','D','E','F','G','H','I','J','K','L']") e "transformar em numero" com for loop.
 
 - Ha falhas como: o usuario nao pode errar as cordenadas, o codigo nao detecta o erro e nao oferece chance de tentar denovo, caso o usuario escreva todos as cordenadas de forma correta nos primeiros quatro ships e no quinto ship o usuario errar, tera que clicar run denovo e inserir os dados novamente. Teria que haver codigos para detectar quando o usuario coloca um '■' (no caso um pedaco do barco) em cima de outro '■', caso o usuario erre a linha ou coluna onde iria colocar o resto do barco, quando o usuario escreve uma letra ou numero ou qualquer tipo de outro caracter que nao existe nas opcoes do board...
 
