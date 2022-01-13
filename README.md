@@ -11,7 +11,7 @@ BOARD
 for i in range(12):
 	V1.append([' ~']*12)"
    
-- and in case it wasn't very clear, the spaces at the beginning of the '~' are just to give it a better appearance and to be able to color the background of one of the ' ~' to red replacing it with 'X' when both players throw the bomb and manage to hit a part of the ship.
+- And in case it wasn't very clear, the spaces at the beginning of the '~' are just to give it a better appearance and to be able to color the background of one of the ' ~' to red replacing it with 'X' when both players throw the bomb and manage to hit a part of the ship.
  
 GETTING THE USERS COORDINATES
  
@@ -46,7 +46,7 @@ GETTING THE PC COORDINATES
 WHEN THE USER WILL THROW THE BOMB
 
 - The idea is very similar to when the user chooses where to place the '■', there was no fanfare with that. Add some comments so the player can think about fun instead of thinking I can have more time to comment more on what the computer can randomly pick one of them.
-- 
+
 WHEN THE PC WILL THROW THE BOMB
 
 - Also being a simple idea when the PC randomly chooses a redder place on the board to place the bars, this function randomly chooses a place to place the "X" with background indicating that the boat has been hit.
