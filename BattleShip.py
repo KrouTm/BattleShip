@@ -31,7 +31,7 @@ pcship=' ■'
 shiphit='\033[0;30;41m X'
 waterhit='\033[0;37;46m ~'
 
-def drawboard(board,color,name):  #Making the style of the board
+def drawboard(board,color,name):#Making the style of the board
     z=0
     print()
     print('\033[0;32;48m'+name+"'s Board\033[m")
@@ -44,7 +44,7 @@ def drawboard(board,color,name):  #Making the style of the board
         print('|')
 drawboard(V1,usercolor,username)
 
-def getLetter(text):#
+def getLetter(text):#Giving the user the opportunity to write the letter again
     letter='x'
     while letter not in H:
         letter=input(text).capitalize()
@@ -52,7 +52,7 @@ def getLetter(text):#
             print("That letter is not correct, try again.")
     return letter
 
-def getNumber(text):
+def getNumber(text):#Giving the user the opportunity to write the number again
     while 1:
         try:
             number=int(input(text))
