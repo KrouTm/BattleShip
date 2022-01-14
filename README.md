@@ -6,10 +6,10 @@ BOARD
  
 - Notice that when the user writes the name, it appears just above the board saying the user's own name instead of "Your board" for example", this makes the game more inviting for the user.
  
-- In the beginning the board was written in an extensive form, very long, as "V1=[' ~',' ~',' ~',' ~',' ~',' ~',' ~',' ~' ,' ~',' ~',' ~',' ~']", this was written 12 times and the code did not work as it should if I put for example "V1=[' ~'*12]*12" or "V1=[' ~',' ~',' ~',' ~',' ~',' ~',' ~',' ~' ,' ~',' ~',' ~',' ~']* 12", because the language interprets this as being the same element, the '~' should be considered as an individual element, but after some trial and error I was able to change it to:
+- In the beginning the board was written in an extensive form, very long, as "V1=[' ~',' ~',' ~',' ~',' ~',' ~',' ~',' ~' ,' ~',' ~',' ~',' ~']", this was written 12 times and the code did not work as it should if I put for example "V1=[' ~'* 12]* 12" or "V1=[' ~',' ~',' ~',' ~',' ~',' ~',' ~',' ~' ,' ~',' ~',' ~',' ~']* 12", because the language interprets this as being the same element, the '~' should be considered as an individual element, but after some trial and error I was able to change it to:
 "V1=[]
 for i in range(12):
-	V1.append([' ~']*12)"
+	V1.append([' ~'] * 12)"
    
 - And in case it wasn't very clear, the spaces at the beginning of the '~' are just to give it a better appearance and to be able to color the background of one of the ' ~' to red replacing it with 'X' when both players throw the bomb and manage to hit a part of the ship.
  
@@ -27,10 +27,15 @@ GETTING THE PC COORDINATES
  
 - Randint property of random was used to choose a random number. The variable "hv=randint(0,1)" means that it will randomly choose 0 or 1 with the intention of defining whether the boat will be drawn horizontally or vertically:
 ■ or ■ ■ ■ ■ ■ ■
+
 ■
+
 ■
+
 ■
+
 ■
+
 ■
  
 - "pcrow=randint(0,11)" and "pccolumn=randint(0,11)" is also randomly choosing a number from 0 to 11 because there are 12 rows and 12 columns (columns represented by the variable "H=['A ','B','C','D','E','F','G','H','I','J','K','L']").
