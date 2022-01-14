@@ -63,4 +63,8 @@ WHILE LOOP
 
 - The while loop is designed so that it prints and executes the above functions when it ends with a winner and loser breaking the loop. The biggest difficulty in this part was finding a way to count '■', because whoever gets 20*'■' first wins. Everything was solved with the variable.find() function.
 
+SOME GAME SCREENSHOTS
 ![alt text](https://github.com/KrouTm/BattleShip/blob/main/screenshots/game.PNG?raw=true)
+![alt text](https://github.com/KrouTm/BattleShip/blob/main/screenshots/game2.PNG?raw=true)
+![alt text](https://github.com/KrouTm/BattleShip/blob/main/screenshots/game3.PNG?raw=true)
+![alt text](https://github.com/KrouTm/BattleShip/blob/main/screenshots/game4.PNG?raw=true)
