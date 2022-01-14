@@ -28,15 +28,10 @@ GETTING THE PC COORDINATES
 - Randint property of random was used to choose a random number. The variable "hv=randint(0,1)" means that it will randomly choose 0 or 1 with the intention of defining whether the boat will be drawn horizontally or vertically:
 
 ■ or ■ ■ ■ ■ ■ ■
-
 ■
-
 ■
-
 ■
-
 ■
-
 ■
  
 - "pcrow=randint(0,11)" and "pccolumn=randint(0,11)" is also randomly choosing a number from 0 to 11 because there are 12 rows and 12 columns (columns represented by the variable "H=['A ','B','C','D','E','F','G','H','I','J','K','L']").
