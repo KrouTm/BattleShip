@@ -26,6 +26,7 @@ GETTING THE USERS COORDINATES
 GETTING THE PC COORDINATES
  
 - Randint property of random was used to choose a random number. The variable "hv=randint(0,1)" means that it will randomly choose 0 or 1 with the intention of defining whether the boat will be drawn horizontally or vertically:
+
 ■ or ■ ■ ■ ■ ■ ■
 
 ■
