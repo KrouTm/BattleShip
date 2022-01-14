@@ -6,7 +6,7 @@ BOARD
  
 - Notice that when the user writes the name, it appears just above the board saying the user's own name instead of "Your board" for example", this makes the game more inviting for the user.
  
-- In the beginning the board was written in an extensive form, very long, as "V1=[' ~',' ~',' ~',' ~',' ~',' ~',' ~',' ~' ,' ~',' ~',' ~',' ~']", this was written 12 times and the code did not work as it should if I put for example "V1=[' ~'*12]*12" or "V1 [' ~',' ~',' ~',' ~',' ~',' ~',' ~',' ~',' ~',' ~',' ~',' ~']* 12", because the language interprets this as being the same element, the '~' should be considered as an individual element, but after some trial and error I was able to change it to:
+- In the beginning the board was written in an extensive form, very long, as "V1=[' ~',' ~',' ~',' ~',' ~',' ~',' ~',' ~' ,' ~',' ~',' ~',' ~']", this was written 12 times and the code did not work as it should if I put for example "V1=[' ~'*12]*12" or "V1=[' ~',' ~',' ~',' ~',' ~',' ~',' ~',' ~' ,' ~',' ~',' ~',' ~']* 12", because the language interprets this as being the same element, the '~' should be considered as an individual element, but after some trial and error I was able to change it to:
 "V1=[]
 for i in range(12):
 	V1.append([' ~']*12)"
@@ -19,7 +19,7 @@ GETTING THE USERS COORDINATES
  
 - Here "letter=input('\0330;35;48m☻ Choose a row (AL): \033m').capitalize()" and here "letter2=input('\0330;35;48m☻ Another row: \ 033m').capitalize()", it was necessary to transform the letter in which the user typed into a number. That's why it was necessary to capitalize the input letter to be able to compare the letters of "H=['A','B','C','D','E','F','G','H' ,'I','J','K','L']") and "turn into number" with for loop.
  
-- There are flaws such as: the user can input wrong coordinates, the code does not detect the error and does not offer a chance to try again, if the user inputs all the coordinates correctly in the first four ships and in the fifth ship the user makes a mistake, he will have to restart the game and enter the data again. There would have to be codes to detect when the user places an '■' (in this case a piece of the boat) on top of another '■', in case the user misses the row or column where he would put the rest of the boat, when the user writes a letter or number or any other type of character that does not exist in the board options, etc.
+- There were flaws such as: the user can input wrong coordinates, the code does not detect the error and does not offer a chance to try again, if the user inputs all the coordinates correctly in the first four ships and in the fifth ship the user makes a mistake, he will have to restart the game and enter the data again, but now the code detects the error and offer to write it again, There would have to be codes to detect when the user places an '■' (in this case a piece of the boat) on top of another '■', in case the user misses the row or column where he would put the rest of the boat, when the user writes a letter or number or any other type of character that does not exist in the board options, etc.
  
 - Besides the bugs it is not clear enough how exactly the user should place the boats, the user must understand that the Carrier is six '■' consecutively without separating one '■' from the other '■', like '■ ■ ■ ■ ■ ■', it should look like this on the board, but I couldn't think of a better way to express this without using another platform, just using pure python.
  
@@ -55,3 +55,4 @@ WHILE LOOP
 
 - The while loop is designed so that it prints and executes the above functions when it ends with a winner and loser breaking the loop. The biggest difficulty in this part was finding a way to count '■', because whoever gets 20*'■' first wins. Everything was solved with the variable.find() function.
 
+ANY WAY, THE PROGRAM JUST WILL WORK PERFECTLY ON PYCHARM OR LINUX, SOME PLATAFORM WITH RICHTEXT.
