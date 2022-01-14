@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="67870da0-9eca-4897-aad6-0a9149301434" name="Changes" comment="" />
+    <list default="true" id="67870da0-9eca-4897-aad6-0a9149301434" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -69,7 +71,9 @@
       <workItem from="1642083777715" duration="9938000" />
       <workItem from="1642153339878" duration="1789000" />
       <workItem from="1642155167461" duration="1849000" />
-      <workItem from="1642157057586" duration="598000" />
+      <workItem from="1642157057586" duration="1905000" />
+      <workItem from="1642158986069" duration="1983000" />
+      <workItem from="1642161054947" duration="1024000" />
     </task>
     <servers />
   </component>
@@ -78,6 +82,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/BattleShip$BattleShip.coverage" NAME="BattleShip Coverage Results" MODIFIED="1642081637840" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/BattleShip_py$BattleShip.coverage" NAME="BattleShip Coverage Results" MODIFIED="1642156894382" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BattleShip_py$BattleShip.coverage" NAME="BattleShip Coverage Results" MODIFIED="1642159785024" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
