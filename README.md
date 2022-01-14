@@ -1,5 +1,7 @@
 # BattleShip
 
+THE GAME WILL ONLY WORK PERFECTLY ON PYCHARM OR LINUX (SOME PLATAFORM THAT SUPPORTS RICHTEXT).
+
 BOARD
  
 - The first thing I started doing was the board.
@@ -61,4 +63,3 @@ WHILE LOOP
 
 - The while loop is designed so that it prints and executes the above functions when it ends with a winner and loser breaking the loop. The biggest difficulty in this part was finding a way to count '■', because whoever gets 20*'■' first wins. Everything was solved with the variable.find() function.
 
-ANY WAY, THE PROGRAM JUST WILL WORK PERFECTLY ON PYCHARM OR LINUX, SOME PLATAFORM WITH RICHTEXT.
