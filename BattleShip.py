@@ -44,10 +44,12 @@ def drawboard(board,color,name):  #Making the style of the board
         print('|')
 drawboard(V1,usercolor,username)
 
-def getLetter(text):
+def getLetter(text):#
     letter='x'
     while letter not in H:
         letter=input(text).capitalize()
+        if letter not in H:
+            print("That letter is not correct, try again.")
     return letter
 
 def getNumber(text):
@@ -56,7 +58,10 @@ def getNumber(text):
             number=int(input(text))
             if number>=0 and number<=11:
                 break
+            else:
+                print("That number is not correct, try again.")
         except:
+            print("That is not a number, try again.")
             continue
     return number
 
