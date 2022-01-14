@@ -6,7 +6,7 @@ BOARD
  
 - Notice that when the user writes the name, it appears just above the board saying the user's own name instead of "Your board" for example", this makes the game more inviting for the user.
  
-- In the beginning the board was written in an extensive form, very long, as "V1=[' ~',' ~',' ~',' ~',' ~',' ~',' ~',' ~' ,' ~',' ~',' ~',' ~']", this was written 12 times and the code did not work as it should if I put for example "V1=[' ~'* 12]* 12" or "V1=[' ~',' ~',' ~',' ~',' ~',' ~',' ~',' ~' ,' ~',' ~',' ~',' ~' ] * 12", because the language interprets this as being the same element, the '~' should be considered as an individual element, but after some trial and error I was able to change it to:
+- In the beginning the board was written in an extensive form, very long, as "V1=[' ~',' ~',' ~',' ~',' ~',' ~',' ~',' ~' ,' ~',' ~',' ~',' ~']", this was written 12 times and the code did not work as it should if I put for example "V1=[' ~'* 12]* 12" or "V1=[' ~',' ~',' ~',' ~',' ~',' ~',' ~',' ~' ,' ~',' ~',' ~',' ~' ] * 12", because the language interprets this as being the same element, the ' ~' should be considered as an individual element, but after some trial and error I was able to change it to:
 "V1=[]
 for i in range(12):
 	V1.append([' ~'] * 12)"
