@@ -1,1 +1,1 @@
-python BattleShip.py
+web: python BattleShip.py
